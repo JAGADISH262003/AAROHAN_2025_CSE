@@ -1,0 +1,166 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  background: #4CAF50;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hero .btn-primary {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.hero .btn-primary:hover {
+  background: #45a049;
+}
+
+/* Details Section */
+.details {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.details h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.details-list li {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Judging Criteria Section */
+.judging {
+  padding: 50px 0;
+  background: #f4f4f4;
+}
+
+.judging h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.criteria-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.criteria-table th,
+.criteria-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.criteria-table th {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.criteria-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Register Section */
+.register {
+  text-align: center;
+  padding: 50px 0;
+  background: #4CAF50;
+  color: #fff;
+}
+
+.register h2 {
+  margin-bottom: 20px;
+}
+
+.register p {
+  margin-bottom: 30px;
+}
+
+.register .btn-primary {
+  background: #fff;
+  color: #4CAF50;
+  border: 2px solid #fff;
+}
+
+.register .btn-primary:hover {
+  background: #45a049;
+  color: #fff;
+  border-color: #45a049;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+}
