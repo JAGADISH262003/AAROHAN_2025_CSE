@@ -13,6 +13,65 @@
             --dark-bg: #0a0a0f;
         }
 
+        .college-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #00003c 0%, #1a003c 100%);
+            padding: 15px 30px;
+            color: #fff;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(188, 19, 254, 0.2);
+        }
+
+        .college-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: headerGlow 6s linear infinite;
+        }
+
+        @keyframes headerGlow {
+            0% { transform: rotate(45deg) translateX(-50%); }
+            100% { transform: rotate(45deg) translateX(50%); }
+        }
+
+        .college-logo {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .college-logo:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .college-text h1 {
+            font-size: 2rem;
+            color: #ffd700;
+            font-weight: bold;
+            margin: 0;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #ffd700; }
+            to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
+        }
+
+        .college-text h3, .college-text p {
+            margin: 4px 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+
         body {
             font-family: 'Roboto Mono', monospace;
             margin: 0;
@@ -24,34 +83,6 @@
             text-align: center;
             padding: 2rem;
             border-bottom: 3px solid var(--cyber-cyan);
-            position: relative;
-        }
-
-        .college-name {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--cyber-cyan);
-            text-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-            margin: 1rem 0;
-        }
-
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo-placeholder {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px dashed var(--neon-purple);
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--matrix-green);
         }
 
         .main-image {
@@ -60,6 +91,12 @@
             object-fit: cover;
             border: 3px solid var(--cyber-cyan);
             margin: 2rem 0;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
         }
 
         .events-grid {
@@ -78,11 +115,41 @@
             position: relative;
             transition: all 0.3s ease;
             cursor: pointer;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .event-card:hover::before {
+            opacity: 0.3;
         }
 
         .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px var(--cyber-cyan);
+            transform: translateY(-10px) rotateX(10deg) rotateY(-10deg);
+            box-shadow: 0 0 40px var(--cyber-cyan);
+        }
+
+        .event-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 5px currentColor);
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .modal {
@@ -94,6 +161,12 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; backdrop-filter: blur(0px); }
+            to { opacity: 1; backdrop-filter: blur(10px); }
         }
 
         .modal-content {
@@ -103,6 +176,12 @@
             margin: 2rem auto;
             border: 2px solid var(--neon-purple);
             position: relative;
+            animation: modalScaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalScaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .rules-box {
@@ -110,6 +189,23 @@
             padding: 1rem;
             margin: 1rem 0;
             background: rgba(0, 255, 80, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rules-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 80, 0.1), transparent);
+            animation: rulesScan 3s infinite;
+        }
+
+        @keyframes rulesScan {
+            100% { left: 100%; }
         }
 
         .register-btn {
@@ -122,33 +218,47 @@
             text-decoration: none;
             display: inline-block;
             margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            animation: btnGlow 3s linear infinite;
+        }
+
+        @keyframes btnGlow {
+            0% { transform: rotate(45deg) translateX(-50%); }
+            100% { transform: rotate(45deg) translateX(50%); }
         }
 
         .register-btn:hover {
             background: var(--cyber-cyan);
             color: black;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <header class="header">
-<div class="college-header">
-    <!-- Left: College Logo -->
-    <img src="SWARNA BHARATH, Khammam, LOGO.avif" alt="SBIT Logo" class="college-logo">
-
-    <!-- Center: College Info -->
-    <div class="college-text">
-        <h1>Swarna Bharathi Institute of Science & Technology</h1>
-        <h3>An UGC AUTONOMOUS Institution</h3>
-        <p>Accredited by NAAC with A+</p>
-    </div>
-
-    <!-- Right: NAAC or Chairman Image -->
-    <img src="NAACA+logo.png" alt="NAAC Logo" class="college-logo">
-</div>
-     <img src="WhatsApp Image 2025-04-16 at 18.48.36_8b571b50.png" alt="Fest Theme" class="main-image">
-    <h2>Department of Computer Science & Engineering</h2>
-
+        <div class="college-header">
+            <img src="SWARNA BHARATH, Khammam, LOGO.avif" alt="SBIT Logo" class="college-logo">
+            <div class="college-text">
+                <h1>Swarna Bharathi Institute of Science & Technology</h1>
+                <h3>An UGC AUTONOMOUS Institution</h3>
+                <p>Accredited by NAAC with A+</p>
+            </div>
+            <img src="NAACA+logo.png" alt="NAAC Logo" class="college-logo">
+        </div>
+        <img src="WhatsApp Image 2025-04-16 at 18.48.36_8b571b50.png" alt="Fest Theme" class="main-image">
+        <h2>Department of Computer Science & Engineering</h2>
     </header>
 
     <div class="events-grid" id="eventsContainer"></div>
@@ -167,9 +277,15 @@
                 title: 'Poster Presentation',
                 description: 'Showcase your technical concepts through creative posters',
                 rules: [
-                    'Team size: 2-3 members',
+                    'Team size: 2 members',
                     'Only Chart presentations',
-                    'Theme: Anounced shortly',
+                    'Time limit: 3 mins per team',
+                    'Theme:',
+                    ' 1. Sustainable energy solutions',
+                    ' 2. Nano technology',
+                    ' 3. Space exploration',
+                    ' 4. Meta verse',
+                    ' 5. Digital twin',
                     'Submission deadline: 24th April',
                     'Judging criteria: Creativity + Technical Accuracy + Way of presentation'
                 ],
@@ -182,7 +298,7 @@
                 description: 'Solve QR puzzles to find hidden treasures',
                 rules: [
                     'Team size: 3 members',
-                    'Time limit: 1 hours',
+                    'Time limit: 1 hour',
                     'No internet access allowed',
                     'Winners based on completion time'
                 ],
@@ -191,14 +307,13 @@
             },
             {
                 id: 'meme',
-                title: 'Meme Contest',
-                description: 'Create exciting memes',
+                title: 'Tech Meme Contest',
+                description: 'Show off your meme-making skills and prove you can entertain people better than a cat video!',
                 rules: [
                     'Individual participation',
                     'Original content only',
-                    'Theme:Announced shortly',
+                    'Theme: Announced shortly',
                     'Submit as JPEG/PNG',
-                    'Voting through social media'
                 ],
                 registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
                 coordinators: ['Priyanka- 86395 91711']
@@ -209,7 +324,7 @@
                 description: 'Test your tech knowledge',
                 rules: [
                     'Team size: 4 members',
-                    'Prelims + Finals format',
+                    'No. of rounds: 3',
                     'Topics: CS Fundamentals + Current Tech',
                     'No electronic devices allowed',
                     'Tie-breaker: Rapid fire round'
@@ -220,12 +335,12 @@
             {
                 id: 'code',
                 title: 'Code Sprint',
-                description: 'Competitive programming challenge , It contains two types of challenges each will have individual registrations 1. speed coding , 2. reverse coding ',
+                description: 'Competitive programming challenge , It contains two types of challenges each will have individual registrations 1. speed coding , 2. reverse coding',
                 rules: [
                     'Individual participation',
                     '3-hour coding marathon',
                     'Languages: C++/Java/Python',
-                    'Platform: Tobe Sepicified shortly',
+                    'Platform: To be specified shortly',
                     'Judging based on test cases passed'
                 ],
                 registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
@@ -236,7 +351,7 @@
                 title: 'Design Forge',
                 description: 'UI/UX design competition',
                 rules: [
-                    'Team size: 2-3 members',
+                    'Individual participation',
                     'Theme revealed on spot',
                     'Tools: ONLY frontend coding languages',
                     'Presentation time: 4 minutes per team',
@@ -253,6 +368,7 @@
                 const card = document.createElement('div');
                 card.className = 'event-card';
                 card.innerHTML = `
+                    <div class="event-icon">${getEventIcon(event.id)}</div>
                     <h3>${event.title}</h3>
                     <p>${event.description}</p>
                     <button onclick="showEvent('${event.id}')">Learn More</button>
@@ -261,22 +377,34 @@
             });
         }
 
+        function getEventIcon(eventId) {
+            const icons = {
+                poster: '📊',
+                treasure: '🧭',
+                meme: '😂',
+                quiz: '📝',
+                code: '💻',
+                design: '🎨'
+            };
+            return icons[eventId] || '🌟';
+        }
+
         function showEvent(eventId) {
             const event = events.find(e => e.id === eventId);
             const modal = document.getElementById('eventModal');
             const content = document.getElementById('modalContent');
             
             content.innerHTML = `
-                <h2>${event.title}</h2>
+                <h2>${getEventIcon(eventId)} ${event.title}</h2>
                 <div class="rules-box">
                     <h3>Rules & Regulations</h3>
                     <ul>
                         ${event.rules.map(rule => `<li>${rule}</li>`).join('')}
                     </ul>
                 </div>
-                <h3>Coordinators</h3>
+                <h3>🚀 Coordinators</h3>
                 <ul>
-                    ${event.coordinators.map(co => `<li>${co}</li>`).join('')}
+                    ${event.coordinators.map(co => `<li>📞 ${co}</li>`).join('')}
                 </ul>
                 <a href="${event.registration}" target="_blank" class="register-btn">Register Now</a>
             `;
