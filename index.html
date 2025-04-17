@@ -1,104 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design Forge - WebCombat 2025</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAROHAN 2025 - CSE Fest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
+            --matrix-green: #0fff50;
+            --dark-bg: #0a0a0f;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            background: linear-gradient(45deg, #0f0f1a, #1a1a2f);
+            color: white;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 3px solid var(--cyber-cyan);
+            position: relative;
+        }
+
+        .college-name {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cyber-cyan);
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+            margin: 1rem 0;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed var(--neon-purple);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--matrix-green);
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 3px solid var(--cyber-cyan);
+            margin: 2rem 0;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--cyber-cyan);
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px var(--cyber-cyan);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #0a0a1a;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            border: 2px solid var(--neon-purple);
+            position: relative;
+        }
+
+        .rules-box {
+            border: 1px solid var(--matrix-green);
+            padding: 1rem;
+            margin: 1rem 0;
+            background: rgba(0, 255, 80, 0.05);
+        }
+
+        .register-btn {
+            background: var(--neon-purple);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .register-btn:hover {
+            background: var(--cyber-cyan);
+            color: black;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <h1>Design Forge</h1>
-      <p>A Frontend Design Competition at AAROHAN_2025</p>
-    </div>
-  </header>
+    <header class="header">
+        <h1 class="college-name">SWARNA BHARATHI INSTITUTE OF SCIENCE & TECHNOLOGY</h1>
+        <h2>AAROHAN 2025 </h2>
+        <h2>Department of Computer Science & Engineering</h2>
+        
+        <div class="logo-grid">
+            <img src="WhatsApp Image 2025-04-16 at 22.39.38_c809786e.jpg" alt="Fest Theme" class="main-image">
+            <img src="WhatsApp Image 2025-04-16 at 22.39.38_c809786e.jpg" alt="Fest Theme" class="main-image">
+            <img src="WhatsApp Image 2025-04-16 at 22.39.38_c809786e.jpg" alt="Fest Theme" class="main-image">
+        </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h2>Welcome to WebCombat 2025</h2>
-      <p>Showcase your frontend skills, creativity, and teamwork in this thrilling design competition!</p>
-      <a href="#details" class="btn">Learn More</a>
-      <a href="https://forms.gle/yxiRc9HdQbiU9ejGA" target="_blank" class="btn btn-primary">Register Now</a>
-    </div>
-  </section>
+        <img src="WhatsApp Image 2025-04-16 at 22.39.38_c809786e.jpg" alt="Fest Theme" class="main-image">
+    </header>
 
-  <!-- Event Details Section -->
-  <section id="details" class="details">
-    <div class="container">
-      <h2>Event Details</h2>
-      <ul class="details-list">
-        <li><strong>Venue:</strong> Announced Soon</li>
-        <li><strong>Date:</strong> 24th April 2025</li>
-        <li><strong>Duration:</strong> 1 hour 30 minutes</li>
-        <li><strong>Team Size:</strong> 2-3 Members</li>
-        <li><strong>Theme:</strong> Revealed on the day of the event</li>
-        <li><strong>Tools Allowed:</strong> HTML, CSS, JavaScript, React, Tailwind, Bootstrap, etc.</li>
-      </ul>
-    </div>
-  </section>
+    <div class="events-grid" id="eventsContainer"></div>
 
-  <!-- Judging Criteria Section -->
-  <section class="judging">
-    <div class="container">
-      <h2>Judging Criteria</h2>
-      <table class="criteria-table">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>UI Design & Aesthetics</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>Responsiveness</td>
-            <td>20</td>
-          </tr>
-          <tr>
-            <td>Creativity & Innovation</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>User Experience (UX)</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>Code Structure & Quality</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>Presentation & Explanation</td>
-            <td>10</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><strong>Bonus Points:</strong> Up to +5 for animations, hover effects, and good documentation.</p>
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
     </div>
-  </section>
 
-  <!-- Registration Section -->
-  <section class="register">
-    <div class="container">
-      <h2>Ready to Compete?</h2>
-      <p>Join us for an exciting challenge and showcase your skills!</p>
-      <a href="https://forms.gle/yxiRc9HdQbiU9ejGA" target="_blank" class="btn btn-primary">Register Now</a>
-    </div>
-  </section>
+    <script>
+        const events = [
+            {
+                id: 'poster',
+                title: 'Poster Presentation',
+                description: 'Showcase your technical concepts through creative posters',
+                rules: [
+                    'Team size: 2-3 members',
+                    'Digital format only (A1 size)',
+                    'Theme: Future Technologies',
+                    'Submission deadline: 24th April 5PM',
+                    'Judging criteria: Creativity + Technical Accuracy'
+                ],
+                registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
+                coordinators: ['SANTHOSH CSE - 8701088210']
+            },
+            {
+                id: 'treasure',
+                title: 'Tech Treasure Hunt',
+                description: 'Solve coding puzzles to find hidden treasures',
+                rules: [
+                    'Team size: 3-4 members',
+                    'Time limit: 2 hours',
+                    'No internet access allowed',
+                    'Final round: Physical puzzle solving',
+                    'Winners based on completion time'
+                ],
+                registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
+                coordinators: ['IMTHYAZ ECE - 9398797468']
+            },
+            {
+                id: 'meme',
+                title: 'Meme Contest',
+                description: 'Create hilarious tech-related memes',
+                rules: [
+                    'Individual participation',
+                    'Original content only',
+                    'Theme: Programming Humor',
+                    'Submit as JPEG/PNG',
+                    'Voting through social media'
+                ],
+                registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
+                coordinators: ['RAJESH MBA - 9989312822']
+            },
+            {
+                id: 'quiz',
+                title: 'Technical Quiz',
+                description: 'Test your tech knowledge',
+                rules: [
+                    'Team size: 2 members',
+                    'Prelims + Finals format',
+                    'Topics: CS Fundamentals + Current Tech',
+                    'No electronic devices allowed',
+                    'Tie-breaker: Rapid fire round'
+                ],
+                registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
+                coordinators: ['VINAY CIVIL - 9518936638']
+            },
+            {
+                id: 'code',
+                title: 'Code Sprint',
+                description: 'Competitive programming challenge',
+                rules: [
+                    'Individual participation',
+                    '3-hour coding marathon',
+                    'Languages: C++/Java/Python',
+                    'Platform: HackerRank',
+                    'Judging based on test cases passed'
+                ],
+                registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
+                coordinators: ['SUMANTH EEE - 7893944096']
+            },
+            {
+                id: 'design',
+                title: 'Design Forge',
+                description: 'UI/UX design competition',
+                rules: [
+                    'Team size: 2-3 members',
+                    'Theme revealed on spot',
+                    'Tools: Figma/Adobe XD',
+                    'Presentation time: 10 minutes',
+                    'Judging: Usability + Creativity'
+                ],
+                registration: 'https://forms.gle/yxiRc9HdQbiU9ejGA',
+                coordinators: ['SANTHOSH CSE - 8701088210']
+            }
+        ];
 
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Design Forge | Organized by Computer Science and Engineering</p>
-    </div>
-  </footer>
+        function renderEvents() {
+            const container = document.getElementById('eventsContainer');
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.innerHTML = `
+                    <h3>${event.title}</h3>
+                    <p>${event.description}</p>
+                    <button onclick="showEvent('${event.id}')">Learn More</button>
+                `;
+                container.appendChild(card);
+            });
+        }
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+        function showEvent(eventId) {
+            const event = events.find(e => e.id === eventId);
+            const modal = document.getElementById('eventModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2>${event.title}</h2>
+                <div class="rules-box">
+                    <h3>Rules & Regulations</h3>
+                    <ul>
+                        ${event.rules.map(rule => `<li>${rule}</li>`).join('')}
+                    </ul>
+                </div>
+                <h3>Coordinators</h3>
+                <ul>
+                    ${event.coordinators.map(co => `<li>${co}</li>`).join('')}
+                </ul>
+                <a href="${event.registration}" target="_blank" class="register-btn">Register Now</a>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('eventModal').style.display = 'none';
+        }
+
+        // Initialize
+        renderEvents();
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('eventModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
