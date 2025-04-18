@@ -150,6 +150,62 @@
             .college-logo { max-width: 60px; }
             .college-text h1 { font-size: 5vw; }
         }
+        .department-heading {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 2rem 0;
+        padding: 1rem;
+        position: relative;
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(45deg, #00f3ff, #bc13fe, #0fff50);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: headingGlow 2s ease-in-out infinite alternate;
+        text-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    }
+
+    .department-heading::before,
+    .department-heading::after {
+        content: '';
+        position: absolute;
+        width: 30%;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, var(--cyber-cyan), transparent);
+        bottom: 0;
+    }
+
+    .department-heading::before {
+        left: 0;
+    }
+
+    .department-heading::after {
+        right: 0;
+    }
+
+    @keyframes headingGlow {
+        0% {
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.5),
+                         0 0 30px rgba(188, 19, 254, 0.3);
+        }
+        100% {
+            text-shadow: 0 0 25px rgba(0, 243, 255, 0.8),
+                         0 0 40px rgba(188, 19, 254, 0.5);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .department-heading {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .department-heading {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+    }
     </style>
 </head>
 <body>
@@ -164,7 +220,13 @@
     </div>
 
     <img src="WhatsApp Image 2025-04-16 at 18.48.36_8b571b50.png" alt="Fest Theme" class="main-image">
-    <h2> Department of Computer Science and Engineeringl</h2>
+    <h2 class="department-heading">
+    <span style="display: inline-block; transform: rotate(-5deg)">D</span>EPARTMENT OF 
+    <span style="color: #00f3ff">C</span>OMPUTER 
+    <span style="color: #bc13fe">S</span>CIENCE 
+    <span style="color: #0fff50">&</span> 
+    <span style="color: #00f3ff">E</span>NGINEERING
+    </h2>
 
     <div class="events-grid" id="eventsContainer"></div>
 
