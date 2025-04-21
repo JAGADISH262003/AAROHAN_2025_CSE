@@ -258,12 +258,7 @@
     </style>
 </head>
 <body>
-    <div id="splashModal" class="splash-modal">
-        <div class="splash-content">
-            <span class="close-splash" onclick="closeSplash()">&times;</span>
-            <img src="SWARNA BHARATHI_250421_193850_page-0001.jpg" alt="Fest Splash" class="splash-image">
-        </div>
-    </div>
+    
     <div class="college-header">
         <img src="SWARNA BHARATH, Khammam, LOGO.avif" alt="SBIT Logo" class="college-logo left-logo">
         <div class="college-text">
@@ -293,31 +288,7 @@
     </div>
 
     <script>
-         function showSplash() {
-            document.getElementById('splashModal').style.display = 'flex';
-        }
-
-        function closeSplash() {
-            document.getElementById('splashModal').style.display = 'none';
-        }
-
-        // Show splash modal when page loads
-        window.onload = function() {
-            showSplash();
-        };
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const splashModal = document.getElementById('splashModal');
-            if (event.target == splashModal) {
-                closeSplash();
-            }
-            // Keep existing modal closing logic
-            const eventModal = document.getElementById('eventModal');
-            if (event.target == eventModal) {
-                closeModal();
-            }
-        }
+        
         const events = [
             {
                 id: 'poster',
